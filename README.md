@@ -16,7 +16,7 @@ Luego, debemos descomprimirlo en alguna parte, yo lo haré en el escritorio.
 
 [![](https://i.imgur.com/QFKZrC1.png)](https://i.imgur.com/QFKZrC1.png)
 
-# Ejecutar el proyecto desde la terminal
+## Ejecutar el proyecto desde la terminal
 
 - Sabiendo en donde tenemos ubicado la carpeta del proyecto, debemos movernos hacia la ubicación de la carpeta, y ejecutar el siguiente comando: mvnw spring-boot:run
 
@@ -55,3 +55,24 @@ En caso de que todo haya salido bien, podemos dirigirnos a nuestro navegador fav
 [![](https://i.imgur.com/HeMpBfV.png)](https://i.imgur.com/HeMpBfV.png)
 
 Aunque nos salga un mensaje de error, es algo normal, pues en esta ruta no hay respuesta programada, así que todo estará bien.
+
+# Base de datos
+
+Para poder entrar a la base de datos en memoria (H2), podemos acceder a la ruta **http://localhost:8080/database** y se nos mostrará un formulario donde debemos diligenciarlo con la siguiente información:
+
+[![](https://i.imgur.com/MXxSHzE.png)](https://i.imgur.com/MXxSHzE.png)
+
+Luego, podríamos realizar consultas a las tablas que se encuentran en la base de datos y ver los registros que existen 
+
+[![](https://i.imgur.com/HYVyUAc.png)](https://i.imgur.com/HYVyUAc.png)
+
+Pero, **¿de donde ha salido todos estos registros?**, en la ruta \src\main\resources existe un archivo llamado data.sql que contiene las consultas que insertan estos registros que acabamos de ver, y la inserción de los mismos se realiza al iniciar el servidor, lo que quiere decir, que si eliminamos manualmente la información, ya sea desde la aplicación o desde la interfaz de la base de datos, al momento de reiniciar el servidor, los datos serán nuevamente ingresados. Estos nos sirven como datos de prueba en la aplicación
+
+# Suposiciones
+
+En una parte del examen, se especifica que : 
+
+"La batalla dará como ganador el equipo que más peleas haya ganado. Cuando un superhéroe
+pierde la pelea será eliminado de la aplicación, sin importar si su equipo ganó la batalla."
+
+Sin embargo, yo hubiese preguntado a mi superior sobre esta petición, pues en caso de que se eliminen de la aplicación **es poco informativo para el usuario** saber que sucedió con los perdedores cuando vuelva a verlos en la lista, pues, claramente ya no estará, lo que **generaría incertidumbre** y quizá una mala experiencia para el usuario final, por lo tanto, he decidido no realizar este punto en concreto.
