@@ -16,7 +16,7 @@ Luego, debemos descomprimirlo en alguna parte, yo lo haré en el escritorio.
 
 [![](https://i.imgur.com/QFKZrC1.png)](https://i.imgur.com/QFKZrC1.png)
 
-## Ejecutar el proyecto desde la terminal
+# Ejecutar el proyecto desde la terminal
 
 - Sabiendo en donde tenemos ubicado la carpeta del proyecto, debemos movernos hacia la ubicación de la carpeta, y ejecutar el siguiente comando: mvnw spring-boot:run
 
