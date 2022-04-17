@@ -87,6 +87,13 @@ public class SuperheroeController {
 		
 		listaMarvel.sort(comparadorHabilidad);
 		listaDC.sort(comparadorHabilidad);
+
+		if(listaMarvel.size() == 0 || listaDC.size() == 0){
+			ArrayList<String> response = new ArrayList<String>();
+			response.add("Alguno de los grupos no tiene superheroes suficientes para disputar la batalla!");
+			resultados.put("noBattle", response);
+			return resultados;
+		}
 		
 		
 		List<SuperheroeModel> ganadores = new ArrayList<SuperheroeModel>();
@@ -149,6 +156,14 @@ public class SuperheroeController {
 				return t.getGrupo().getNombre();
 			}
 		});
+
+		if(resultadoGrupos.get("MARVEL") == null){
+			resultadoGrupos.put("MARVEL", 0);
+		}
+
+		if(resultadoGrupos.get("DC COMICS") == null){
+			resultadoGrupos.put("DC COMICS", 0);
+		}
 		
 		List<Map<String, Integer>> marcador = new ArrayList<Map<String,Integer>>();
 		marcador.add(resultadoGrupos);
